@@ -1,0 +1,16 @@
+// Test Erreurs sémantiques
+// Doit afficher une erreur semantique aux lignes : 4,5,6,11,12 et 14
+variables
+entier a;
+booleen a;
+entier a;
+booleen a;
+debut
+ecrire 1000 ; 
+ecrire 5 ;
+a=10;
+b=faux;
+a=b;
+ecrire a;
+ecrire b;
+fin

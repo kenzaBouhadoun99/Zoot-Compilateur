@@ -1,0 +1,130 @@
+#Lahlou Ghalia  & Bouhadoun Kenza 
+
+   #   ********** Init data *********** 
+.data
+
+vrai: .word 1
+faux: .word 0
+print_V: .asciiz "vrai"
+print_F: .asciiz "faux"
+newligne: .asciiz "\n"
+
+.text
+
+main: 
+   #   ********** Init variables *********** 
+	move $s7, $sp
+	addi $sp, $sp, -16
+
+	la $s1, faux
+
+   # ***  Debut du programme ***
+
+   #    f = 1
+	li $v0, 1
+	sw $v0, 0($s7)
+
+	lw $v0, 0($s7)
+	move $a0, $v0
+	li $v0, 1
+	syscall
+
+	la $a0, newligne
+	li $v0, 4
+	syscall
+
+   #    c = f
+	lw $v0, 0($s7)
+
+	sw $v0, -4($s7)
+
+   #    f = 5
+	li $v0, 5
+	sw $v0, 0($s7)
+
+	lw $v0, -4($s7)
+	move $a0, $v0
+	li $v0, 1
+	syscall
+
+	la $a0, newligne
+	li $v0, 4
+	syscall
+
+	lw $v0, 0($s7)
+	move $a0, $v0
+	li $v0, 1
+	syscall
+
+	la $a0, newligne
+	li $v0, 4
+	syscall
+
+   #    b = vrai
+	la $v0, 1
+	sw $v0, -8($s7)
+
+	lw $v0, -8($s7)
+	move $a0, $v0
+	li $v0, 1
+	syscall
+
+	la $a0, newligne
+	li $v0, 4
+	syscall
+
+   #    e = b
+	lw $v0, -8($s7)
+
+	sw $v0, -12($s7)
+
+   #    b = faux
+	la $v0, 0
+	sw $v0, -8($s7)
+
+	lw $v0, -8($s7)
+	move $a0, $v0
+	li $v0, 1
+	syscall
+
+	la $a0, newligne
+	li $v0, 4
+	syscall
+
+	lw $v0, -12($s7)
+	move $a0, $v0
+	li $v0, 1
+	syscall
+
+	la $a0, newligne
+	li $v0, 4
+	syscall
+
+	li $a0, 1
+	li $v0, 1
+	syscall
+
+	la $a0, newligne
+	li $v0, 4
+	syscall
+
+	li $a0, 414
+	li $v0, 1
+	syscall
+
+	la $a0, newligne
+	li $v0, 4
+	syscall
+
+	li $a0, 1
+	li $v0, 1
+	syscall
+
+	la $a0, newligne
+	li $v0, 4
+	syscall
+
+   #  *** Fin du programme ***
+ fin: 
+	li $v0, 10
+	syscall

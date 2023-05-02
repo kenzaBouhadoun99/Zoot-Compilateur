@@ -1,0 +1,9 @@
+// Doit écrire faux
+variables
+  booleen Vrai;
+  booleen a;
+debut
+	Vrai=faux;
+	a=Vrai;
+	ecrire a;
+fin
